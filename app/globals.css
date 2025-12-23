@@ -1,0 +1,151 @@
+:root {
+  --background: 13 17 23;
+  --foreground: 255 255 255;
+  --card-bg: 22 27 34;
+  --primary: 88 166 255;
+  --secondary: 139 148 158;
+  --accent: 238 65 65;
+  /* Down color */
+  --succeed: 50 205 50;
+  /* Up color */
+  --border: 48 54 61;
+}
+
+body {
+  color: rgb(var(--foreground));
+  background: rgb(var(--background));
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(var(--card-bg), 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(var(--border), 0.5);
+  border-radius: 12px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Utilities */
+.text-primary {
+  color: rgb(var(--primary));
+}
+
+.text-secondary {
+  color: rgb(var(--secondary));
+}
+
+.text-up {
+  color: rgb(var(--succeed));
+}
+
+.text-down {
+  color: rgb(var(--accent));
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Dashboard Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 2fr;
+  gap: 2rem;
+  height: calc(100vh - 100px);
+  padding-top: 2rem;
+}
+
+.dashboard-list-panel {
+  height: 100%;
+  overflow: hidden;
+}
+
+.dashboard-chart-panel {
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-button {
+  display: none;
+  /* Hidden on desktop */
+  background: none;
+  border: none;
+  color: rgb(var(--primary));
+  cursor: pointer;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+  .dashboard-grid {
+    display: block;
+    height: auto;
+    /* Let content determine height or fixed */
+    padding-top: 1rem;
+  }
+
+  /* When showing chart, hide list */
+  .dashboard-grid.show-chart .dashboard-list-panel {
+    display: none;
+  }
+
+  /* When showing list, hide chart */
+  .dashboard-grid.show-list .dashboard-chart-panel {
+    display: none;
+  }
+
+  /* When showing chart, ensure it takes full height if needed */
+  .dashboard-grid.show-chart .dashboard-chart-panel {
+    display: flex;
+    height: calc(100vh - 120px);
+    /* Adjust for header/padding */
+  }
+
+  .back-button {
+    display: flex;
+  }
+}
