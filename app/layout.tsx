@@ -15,14 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav className="glass" style={{ margin: '1rem', padding: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <nav className="glass app-header">
+          <div className="header-brand">
             {/* Logo placeholder */}
-            <div style={{ width: 32, height: 32, background: 'linear-gradient(45deg, var(--primary), var(--succeed))', borderRadius: '50%' }}></div>
-            <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 'bold' }}>CryptoTracker</h1>
+            <div className="header-logo"></div>
+            <h1 className="header-title">CryptoTracker</h1>
           </div>
           <div>
-            <span className="text-secondary" style={{ fontSize: '0.9rem' }}>Real-Time Market Data</span>
+            <span className="header-subtitle">Real-Time Market Data</span>
           </div>
         </nav>
         {children}
