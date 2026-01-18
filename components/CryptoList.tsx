@@ -11,7 +11,7 @@ interface CryptoListProps {
 
 export default function CryptoList({ coins, onSelect, selectedSymbol }: CryptoListProps) {
     return (
-        <div className="glass" style={{ padding: '1rem', overflowY: 'auto', height: '100%', width: '100%' }}>
+        <div className="glass" style={{ padding: '1rem', overflowY: 'auto', height: '100%', width: '100%', margin: 'auto' }}>
             <h2 style={{ marginTop: 0, marginBottom: '1rem' }}>Top Cryptocurrencies</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>

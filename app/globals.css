@@ -159,6 +159,7 @@ a {
     height: auto;
     /* Let content determine height or fixed */
     padding-top: 1rem;
+    margin: auto;
   }
 
   /* When showing chart, hide list */
